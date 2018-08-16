@@ -34,8 +34,8 @@ services:
     image: loraneo/cdr-kafka-stream:1.0.0a
     networks:
       - dev    
-  docker-kafka-connect:
-    image: loraneo/docker-kafka-connect:1.0.0a
+  kafka-connect:
+    image: loraneo/docker-kafka-connect:2.0.0a
     networks:
       - dev
     ports:
