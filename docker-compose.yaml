@@ -1,0 +1,13 @@
+version: '3'
+services:
+  kafka-broker-1:
+    image: loraneo/docker-kafka-broker:2.0.0a
+    networks:
+      - dev
+  redis:
+    image: loraneo/docker-zookeeper:3.4.10a
+    networks:
+      - dev
+    
+networks:
+  dev:
