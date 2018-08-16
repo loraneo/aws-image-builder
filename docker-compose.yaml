@@ -5,19 +5,19 @@ services:
     networks:
       - dev
     envirnoment:
-      - BROKER_ID: 1
+      BROKER_ID: 1
   kafka-broker-2.loc:
     image: loraneo/docker-kafka-broker:2.0.0a
     networks:
       - dev
     envirnoment:
-      - BROKER_ID: 2
+      BROKER_ID: 2
   kafka-broker-3.loc:
     image: loraneo/docker-kafka-broker:2.0.0a
     networks:
       - dev
     envirnoment:
-      - BROKER_ID: 3
+      BROKER_ID: 3
   zookeper-1.loc:
     image: loraneo/docker-zookeeper:3.4.10a
     networks:
