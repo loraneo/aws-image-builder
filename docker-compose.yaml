@@ -26,5 +26,10 @@ services:
     image: loraneo/docker-zookeeper:3.4.10a
     networks:
       - dev 
+  cdr-gen:
+    image: loraneo/cdr-gen:1.0.0a
+    networks:
+      - dev
+      
 networks:
   dev:
