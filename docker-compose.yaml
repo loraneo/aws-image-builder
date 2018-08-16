@@ -30,6 +30,9 @@ services:
     image: loraneo/cdr-gen:1.0.0a
     networks:
       - dev
-      
+  cdr-kafka-stream:
+    image: loraneo/cdr-kafka-stream:1.0.0a
+    networks:
+      - dev    
 networks:
   dev:
