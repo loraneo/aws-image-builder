@@ -1,14 +1,12 @@
 {
-  "name": "elasticsearch-sink",
-  "config": {
-    "connector.class": "io.confluent.connect.elasticsearch.ElasticsearchSinkConnector",
-    "tasks.max": "1",
-    "topics": "public.elastic",
-    "key.ignore": "true",
-    "connection.url": "https://search-cdr-demo-ztonpmygtiylmbuk7urfl4p4mi.eu-central-1.es.amazonaws.com",
-    "type.name": "cdr",
-    "name": "elasticsearch-sink"
-  },
-  "tasks": [],
-  "type": null
+	"name": "elasticsearch-sink",
+	"config": {
+		"connector.class": "io.confluent.connect.elasticsearch.ElasticsearchSinkConnector",
+		"tasks.max": "1",
+		"topics": "public.elastic",
+		"key.ignore": "true",
+		"connection.url": "https://search-cdr-demo-ztonpmygtiylmbuk7urfl4p4mi.eu-central-1.es.amazonaws.com",
+		"type.name": "cdr",
+		"name": "elasticsearch-sink"
+	}
 }
