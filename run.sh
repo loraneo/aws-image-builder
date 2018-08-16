@@ -27,5 +27,8 @@ git clone https://github.com/loraneo/docker-zookeeper.git
 git clone https://github.com/loraneo/docker-kafka-broker.git
 git clone https://github.com/loraneo/aws-image-builder.git
 
+
 cd docker-os && ./build.sh && cd ..
-cd docker-java && ./build.sh && cd ..
+cd docker-java && chmod +x *.sh -R && ./build.sh && cd ..
+cd docker-zookeeper && chmod +x *.sh -R && ./build.sh && cd ..
+cd docker-kafka-broker && chmod +x *.sh -R && ./build.sh && cd ..
