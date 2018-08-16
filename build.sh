@@ -15,3 +15,5 @@ cd docker-debezium-connect && git pull  && chmod +x *.sh -R && ./build.sh && cd 
 cd aws-image-builder
 
 docker stack deploy --compose-file docker-compose.yaml phone
+
+curl -XPOST http://127.0.0.1:8083/connectors -d "@connect.json"
