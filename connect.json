@@ -8,6 +8,7 @@
 		"connection.url": "https://search-cdr-demo-ztonpmygtiylmbuk7urfl4p4mi.eu-central-1.es.amazonaws.com",
 		"type.name": "cdr",
 		"schemas.enable" : "false",
-		"name": "elasticsearch-sink"
+		"name": "elasticsearch-sink",
+	    "schema.ignore" : "true"
 	}
 }
