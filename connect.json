@@ -12,9 +12,9 @@
 		"schema.ignore": "true",
 		"transforms": "InsertKey,ExtractId",
 		"transforms.InsertKey.type": "org.apache.kafka.connect.transforms.ValueToKey",
-		"transforms.InsertKey.fields": "callId",
+		"transforms.InsertKey.fields": "id",
 		"transforms.ExtractId.type": "org.apache.kafka.connect.transforms.ExtractField$Key",
-		"transforms.ExtractId.field": "callId"
+		"transforms.ExtractId.field": "id"
 	}
 }
 
