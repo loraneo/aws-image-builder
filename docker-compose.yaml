@@ -22,10 +22,20 @@ services:
     image: loraneo/docker-zookeeper:3.4.10a
     networks:
       - dev
+    environment:
+      - MY_ID=1
   zookeper-2:
     image: loraneo/docker-zookeeper:3.4.10a
     networks:
-      - dev 
+      - dev
+    environment:
+      - MY_ID=2
+  zookeper-3:
+    image: loraneo/docker-zookeeper:3.4.10a
+    networks:
+      - dev  
+    environment:
+      - MY_ID=3
   cdr-gen:
     image: loraneo/cdr-gen:1.0.0a
     networks:
