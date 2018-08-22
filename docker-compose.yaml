@@ -1,4 +1,4 @@
-version: '3'
+version: '3.6'
 services:
   kafka-broker-1:
     image: loraneo/docker-kafka-broker:2.0.0a
@@ -27,7 +27,7 @@ services:
     environment:
       - MY_ID=1
     deploy:
-      endpoint-mode: dnsrr
+      endpoint_mode: dnsrr
   zookeper-2:
     image: loraneo/docker-zookeeper:3.4.10a
     networks:
@@ -35,7 +35,7 @@ services:
     environment:
       - MY_ID=2
     deploy:
-      endpoint-mode: dnsrr
+      endpoint_mode: dnsrr
   zookeper-3:
     image: loraneo/docker-zookeeper:3.4.10a
     networks:
@@ -43,7 +43,7 @@ services:
     environment:
       - MY_ID=3
     deploy:
-      endpoint-mode: dnsrr
+      endpoint_mode: dnsrr
   cdr-gen:
     image: loraneo/cdr-gen:1.0.0a
     networks:
