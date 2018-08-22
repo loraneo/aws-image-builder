@@ -4,11 +4,19 @@
 		"connector.class": "io.confluent.connect.elasticsearch.ElasticsearchSinkConnector",
 		"tasks.max": "1",
 		"topics": "public.elastic",
-		"key.ignore": "true",
+		"key.ignore": "false",
 		"connection.url": "https://search-cdr-demo-ztonpmygtiylmbuk7urfl4p4mi.eu-central-1.es.amazonaws.com",
 		"type.name": "cdr",
-		"schemas.enable" : "false",
+		"schemas.enable": "false",
 		"name": "elasticsearch-sink",
-	    "schema.ignore" : "true"
+		"schema.ignore": "true",
+		"transforms": "InsertKey,ExtractId",
+		"transforms.InsertKey.type": "org.apache.kafka.connect.transforms.ValueToKey",
+		"transforms.InsertKey.fields": "callId",
+		"transforms.ExtractId.type": "org.apache.kafka.connect.transforms.ExtractField$Key",
+		"transforms.ExtractId.field": "callId"
 	}
 }
+
+
+       
