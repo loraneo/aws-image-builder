@@ -3,60 +3,77 @@ services:
   kafka-broker-1:
     image: loraneo/docker-kafka-broker:2.0.0a
     networks:
-      - dev
+    - dev
     environment:
-      - BROKER_ID=1
-
-      
+    - BROKER_ID=1
+    volumes:
+    - kafka-1:/var/lib/kafka-logs
   kafka-broker-2:
     image: loraneo/docker-kafka-broker:2.0.0a
     networks:
-      - dev
+    - dev
     environment:
-      - BROKER_ID=2
+    - BROKER_ID=2
+    volumes:
+    - kafka-2:/var/lib/kafka-logs
   kafka-broker-3:
     image: loraneo/docker-kafka-broker:2.0.0a
     networks:
-      - dev
+    - dev
     environment:
-      - BROKER_ID=3
+    - BROKER_ID=3
+  volumes:
+  - kafka-3:/var/lib/kafka-logs
   zookeper-1:
     image: loraneo/docker-zookeeper:3.4.10a
     networks:
-      - dev
+    - dev
     environment:
-      - MY_ID=1
+    - MY_ID=1
     deploy:
       endpoint_mode: dnsrr
+    volumes:
+    - zookeeper-1:/opt/zookeeper/data
   zookeper-2:
     image: loraneo/docker-zookeeper:3.4.10a
     networks:
-      - dev
+    - dev
     environment:
-      - MY_ID=2
+    - MY_ID=2
     deploy:
       endpoint_mode: dnsrr
+    volumes:
+    - zookeeper-2:/opt/zookeeper/data      
   zookeper-3:
     image: loraneo/docker-zookeeper:3.4.10a
     networks:
-      - dev  
+    - dev
     environment:
-      - MY_ID=3
+    - MY_ID=3
     deploy:
       endpoint_mode: dnsrr
+    volumes:
+    - zookeeper-3:/opt/zookeeper/data
   cdr-gen:
     image: loraneo/cdr-gen:1.0.0a
     networks:
-      - dev
+    - dev
   cdr-kafka-stream:
     image: loraneo/cdr-kafka-stream:1.0.0a
     networks:
-      - dev    
+    - dev
   kafka-connect:
     image: loraneo/docker-kafka-connect:2.0.0a
     networks:
-      - dev
+    - dev
     ports:
-      - 8083:8083   
+    - 8083:8083
 networks:
-  dev:
+  dev: 
+volumes:
+  kafka-1: 
+  kafka-2: 
+  kafka-3: 
+  zookeeper-1: 
+  zookeeper-2: 
+  zookeeper-3: 
