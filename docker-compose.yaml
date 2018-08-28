@@ -46,8 +46,10 @@ services:
       resources:
         limits:
           memory: 2048M
+      endpoint_mode: dnsrr
     volumes:
     - zookeeper-1:/opt/zookeeper/data
+    
   zookeper-2:
     image: loraneo/docker-zookeeper:3.4.10a
     networks:
@@ -58,6 +60,7 @@ services:
       resources:
         limits:
           memory: 2048M
+      endpoint_mode: dnsrr
     volumes:
     - zookeeper-2:/opt/zookeeper/data
   zookeper-3:
@@ -70,6 +73,7 @@ services:
       resources:
         limits:
           memory: 2048M
+      endpoint_mode: dnsrr
     volumes:
     - zookeeper-3:/opt/zookeeper/data
   cdr-gen:
