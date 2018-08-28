@@ -9,10 +9,9 @@ services:
     volumes:
     - kafka-1:/var/lib/kafka-logs
     deploy:
-      deploy:
-        resources:
-          limits:
-            memory: 2048M
+      resources:
+        limits:
+          memory: 2048M
   kafka-broker-2:
     image: loraneo/docker-kafka-broker:2.0.0a
     networks:
