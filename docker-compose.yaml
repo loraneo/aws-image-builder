@@ -23,8 +23,8 @@ services:
     - kafka-2:/var/lib/kafka-logs
     deploy:
       resources:
-      limits:
-        memory: 2048M
+        limits:
+          memory: 2048M
   kafka-broker-3:
     image: loraneo/docker-kafka-broker:2.0.0a
     networks:
@@ -35,8 +35,8 @@ services:
     - kafka-3:/var/lib/kafka-logs
     deploy:
       resources:
-      limits:
-        memory: 2048M
+        limits:
+          memory: 2048M
   zookeper-1:
     image: loraneo/docker-zookeeper:3.4.10a
     networks:
@@ -49,8 +49,8 @@ services:
     - zookeeper-1:/opt/zookeeper/data
     deploy:
       resources:
-      limits:
-        memory: 2048M
+        limits:
+          memory: 2048M
   zookeper-2:
     image: loraneo/docker-zookeeper:3.4.10a
     networks:
@@ -63,8 +63,8 @@ services:
     - zookeeper-2:/opt/zookeeper/data
     deploy:
       resources:
-      limits:
-        memory: 2048M
+        limits:
+          memory: 2048M
   zookeper-3:
     image: loraneo/docker-zookeeper:3.4.10a
     networks:
@@ -77,24 +77,24 @@ services:
     - zookeeper-3:/opt/zookeeper/data
     deploy:
       resources:
-      limits:
-        memory: 2048M
+        limits:
+          memory: 2048M
   cdr-gen:
     image: loraneo/cdr-gen:1.0.0a
     networks:
     - dev
     deploy:
       resources:
-      limits:
-        memory: 512M
+        limits:
+          memory: 512M
   cdr-kafka-stream:
     image: loraneo/cdr-kafka-stream:1.0.0a
     networks:
     - dev
     deploy:
       resources:
-      limits:
-        memory: 512M
+        limits:
+          memory: 512M
   kafka-connect:
     image: loraneo/docker-kafka-connect:2.0.0a
     networks:
@@ -103,8 +103,8 @@ services:
     - 8083:8083
     deploy:
       resources:
-      limits:
-        memory: 1024M
+        limits:
+          memory: 1024M
 networks:
   dev:
     attachable: true
