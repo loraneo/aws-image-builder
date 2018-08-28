@@ -44,3 +44,6 @@ cd aws-image-builder
 
 ./update.sh
 
+# docker run  --network phone_dev loraneo/cdr-gen:1.0.0a java -cp cdr-gen-1.0-SNAPSHOT-jar-with-dependencies.jar com.cdr.gen.CDRHistory
+
+
