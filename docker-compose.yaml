@@ -8,6 +8,9 @@ services:
     - BROKER_ID=1
     volumes:
     - kafka-1:/var/lib/kafka-logs
+    resources:
+      limits:
+        memory: 2048M
   kafka-broker-2:
     image: loraneo/docker-kafka-broker:2.0.0a
     networks:
@@ -16,14 +19,20 @@ services:
     - BROKER_ID=2
     volumes:
     - kafka-2:/var/lib/kafka-logs
+    resources:
+      limits:
+        memory: 2048M
   kafka-broker-3:
     image: loraneo/docker-kafka-broker:2.0.0a
     networks:
     - dev
     environment:
     - BROKER_ID=3
-  volumes:
-  - kafka-3:/var/lib/kafka-logs
+    volumes:
+    - kafka-3:/var/lib/kafka-logs
+    resources:
+      limits:
+        memory: 2048M
   zookeper-1:
     image: loraneo/docker-zookeeper:3.4.10a
     networks:
@@ -34,6 +43,9 @@ services:
       endpoint_mode: dnsrr
     volumes:
     - zookeeper-1:/opt/zookeeper/data
+    resources:
+      limits:
+        memory: 2048M
   zookeper-2:
     image: loraneo/docker-zookeeper:3.4.10a
     networks:
@@ -43,7 +55,10 @@ services:
     deploy:
       endpoint_mode: dnsrr
     volumes:
-    - zookeeper-2:/opt/zookeeper/data      
+    - zookeeper-2:/opt/zookeeper/data
+    resources:
+      limits:
+        memory: 2048M
   zookeper-3:
     image: loraneo/docker-zookeeper:3.4.10a
     networks:
@@ -54,26 +69,38 @@ services:
       endpoint_mode: dnsrr
     volumes:
     - zookeeper-3:/opt/zookeeper/data
+    resources:
+      limits:
+        memory: 2048M
   cdr-gen:
     image: loraneo/cdr-gen:1.0.0a
     networks:
     - dev
+    resources:
+      limits:
+        memory: 512M
   cdr-kafka-stream:
     image: loraneo/cdr-kafka-stream:1.0.0a
     networks:
     - dev
+    resources:
+      limits:
+        memory: 512M
   kafka-connect:
     image: loraneo/docker-kafka-connect:2.0.0a
     networks:
     - dev
     ports:
     - 8083:8083
+    resources:
+      limits:
+        memory: 512M
 networks:
-  dev: 
+  dev: null
 volumes:
-  kafka-1: 
-  kafka-2: 
-  kafka-3: 
-  zookeeper-1: 
-  zookeeper-2: 
-  zookeeper-3: 
+  kafka-1: null
+  kafka-2: null
+  kafka-3: null
+  zookeeper-1: null
+  zookeeper-2: null
+  zookeeper-3: null
