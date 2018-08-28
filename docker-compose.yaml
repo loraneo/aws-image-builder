@@ -96,7 +96,8 @@ services:
       limits:
         memory: 1024M
 networks:
-  dev: null
+  dev:
+    attachable: true
 volumes:
   kafka-1: null
   kafka-2: null
