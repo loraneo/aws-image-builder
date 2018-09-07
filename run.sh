@@ -42,6 +42,10 @@ cd docker-debezium-connect && chmod +x *.sh -R && ./build.sh && cd ..
 
 cd aws-image-builder
 
+apt-get install python-pip -y
+apt-get install jq -y
+pip install awscli
+
 ./update.sh
 
 # docker run  --network phone_dev loraneo/cdr-gen:1.0.0a java -cp cdr-gen-1.0-SNAPSHOT-jar-with-dependencies.jar com.cdr.gen.CDRHistory
