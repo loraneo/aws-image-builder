@@ -20,6 +20,8 @@ URL=$(aws es describe-elasticsearch-domains --domain-names demo --region eu-cent
 sed "s/URL/$URL/" connect.json.template   > connect.json
 curl -XPOST http://127.0.0.1:8083/connectors -H "Content-Type: application/json" -d "@connect.json"
 while [ $? -ne 0 ]; do
+    URL=$(aws es describe-elasticsearch-domains --domain-names demo --region eu-central-1   | jq '.DomainStatusList[0].Endpoints.vpc' -r)
+    sed "s/URL/$URL/" connect.json.template   > connect.json
 	curl -XPOST http://127.0.0.1:8083/connectors -H "Content-Type: application/json" -d "@connect.json"    
 done
 
